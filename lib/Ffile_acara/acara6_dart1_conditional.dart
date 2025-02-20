@@ -63,7 +63,7 @@ void main(){
     print("minimarket tutup, saya pulang lagi");
   }
 
-  //switch case
+  //conditional switch case
   var buttonPushed = 1;
   switch(buttonPushed) {
     case 1: { print('matikan TV!'); break; }

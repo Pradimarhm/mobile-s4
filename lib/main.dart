@@ -1,7 +1,38 @@
 import 'package:flutter/material.dart';
+import 'Ffile_acara/Acara15/myHomePage.dart';
+import 'Ffile_acara/Acara16/Telegram.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
 
 void main() {
-  runApp(const MyApp());
+  runApp(telegramAps()); // Menjalankan aplikasi Flutter
+}
+
+class Homepage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Myhomepage(), // Menggunakan MyHomePage dari file lain
+    );
+  }
+}
+
+class telegramAps extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Telegram',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Telegram(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {

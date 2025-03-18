@@ -1,3 +1,6 @@
+import 'package:acara_bkpm/Ffile_acara/Acara18/HomePageAcara18.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara17/AppWidget.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara19/routes.dart';
 import 'package:flutter/material.dart';
 import 'Ffile_acara/Acara15/myHomePage.dart';
 import 'Ffile_acara/Acara16/Telegram.dart';
@@ -7,7 +10,18 @@ import 'Ffile_acara/Acara16/Telegram.dart';
 // }
 
 void main() {
-  runApp(telegramAps()); // Menjalankan aplikasi Flutter
+  runApp(Acara19()); // Menjalankan aplikasi Flutter
+}
+
+class Acara19 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.generateRoute,
+    );
+  }
 }
 
 class Homepage extends StatelessWidget {
@@ -16,6 +30,17 @@ class Homepage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Myhomepage(), // Menggunakan MyHomePage dari file lain
+    );
+  }
+}
+
+class Acara18 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Homepageacara18(),
     );
   }
 }
@@ -34,6 +59,33 @@ class telegramAps extends StatelessWidget {
     );
   }
 }
+
+class Acara17 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Appwidget(),
+    );
+  }
+}
+
+// class HomePageAcara18 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return
+//   }
+// }
+
+// class AboutPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return
+//   }
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

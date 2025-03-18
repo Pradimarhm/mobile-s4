@@ -1,0 +1,2 @@
+D:/File Downloader/S4/Mobile/tugasBKPM/acara_bkpm/android/app/.cxx/Debug/3l741hgd/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/File Downloader/S4/Mobile/tugasBKPM/acara_bkpm/android/app/.cxx/Debug/3l741hgd/armeabi-v7a/CMakeFiles/rebuild_cache.dir

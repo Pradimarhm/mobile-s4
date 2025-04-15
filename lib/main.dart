@@ -1,6 +1,11 @@
 import 'package:acara_bkpm/Ffile_acara/Acara18/HomePageAcara18.dart';
 import 'package:acara_bkpm/Ffile_acara/Acara17/AppWidget.dart';
 import 'package:acara_bkpm/Ffile_acara/Acara19/routes.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara20/home.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara20/profile.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara20/settings.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara20/bottomTabNav/homeBottom.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara21_22_23_24/gradientClass.dart';
 import 'package:flutter/material.dart';
 import 'Ffile_acara/Acara15/myHomePage.dart';
 import 'Ffile_acara/Acara16/Telegram.dart';
@@ -10,9 +15,172 @@ import 'Ffile_acara/Acara16/Telegram.dart';
 // }
 
 void main() {
-  runApp(Acara19()); // Menjalankan aplikasi Flutter
+  runApp(Homee()); // Menjalankan aplikasi Flutter
 }
 
+/////////////////////
+//// ACARA 21 ///////
+/////////////////////
+class Homee extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'bottom nav example',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
+      home: Gradientclass(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+/////////////////////
+//// ACARA 20 ///////
+/////////////////////
+class bottomNav extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'bottom nav example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: Homebottom(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class DrawnerWidget extends StatefulWidget {
+  @override
+  _DrawnerwidgetState createState() => _DrawnerwidgetState();
+}
+
+class _DrawnerwidgetState extends State<DrawnerWidget> {
+  int index = 0;
+  List<Widget> list = [
+    Home(),
+    Profile(),
+    Settings(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Drawner Widget Acara 20'),
+          backgroundColor: Colors.blue,
+        ),
+        body: list[index],
+        drawer: MyDrawer(
+          onTap: (context, newIndex) {
+            setState(() {
+              index = newIndex;
+            });
+            Navigator.pop(context); // untuk menutup drawer
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class MyDrawer extends StatelessWidget {
+  final void Function(BuildContext, int) onTap;
+
+  MyDrawer({required this.onTap});
+
+  // final Function onTap;
+
+  // MyDrawer({this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.8,
+      child: Drawer(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Padding(
+                padding: EdgeInsets.all(6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Container(
+                      width: 60,
+                      height: 60,
+                      child: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/img/Thomas Lean.png'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      'Praditya Ivan',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Text(
+                      'Praditya@gmail.com',
+                      style: TextStyle(fontSize: 12, color: Colors.white),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () => onTap(context, 0),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Profile'),
+              onTap: () => onTap(context, 1),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () => onTap(context, 2),
+            ),
+            Divider(
+              height: 1,
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('LogOut'),
+              onTap: () => onTap(context, 0),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/////////////////////
+//// ACARA 19 ///////
+/////////////////////
 class Acara19 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,6 +238,17 @@ class Acara17 extends StatelessWidget {
     );
   }
 }
+
+// class Acara20 extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: DrawerScreen20(),
+//     );
+//   }
+// }
 
 // class HomePageAcara18 extends StatelessWidget {
 //   @override

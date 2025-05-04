@@ -6,6 +6,9 @@ import 'package:acara_bkpm/Ffile_acara/Acara20/profile.dart';
 import 'package:acara_bkpm/Ffile_acara/Acara20/settings.dart';
 import 'package:acara_bkpm/Ffile_acara/Acara20/bottomTabNav/homeBottom.dart';
 import 'package:acara_bkpm/Ffile_acara/Acara21_22_23_24/gradientClass.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara25_26/belajarForm.dart';
+import 'package:acara_bkpm/Ffile_acara/Acara27/belajarFormKedua.dart';
+
 import 'package:flutter/material.dart';
 import 'Ffile_acara/Acara15/myHomePage.dart';
 import 'Ffile_acara/Acara16/Telegram.dart';
@@ -15,7 +18,45 @@ import 'Ffile_acara/Acara16/Telegram.dart';
 // }
 
 void main() {
-  runApp(Homee()); // Menjalankan aplikasi Flutter
+  runApp(Form2()); // Menjalankan aplikasi Flutter
+}
+
+/////////////////////
+//// ACARA 27 ///////
+/////////////////////
+class Form2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'Form2',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
+      home: BelajarformKedua(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+/////////////////////
+//// ACARA 25 26 ///////
+/////////////////////
+class Form extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      title: 'Form',
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      //   visualDensity: VisualDensity.adaptivePlatformDensity,
+      // ),
+      home: Belajarform(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
 }
 
 /////////////////////
